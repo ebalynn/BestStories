@@ -22,7 +22,6 @@ Uses the following:
 Contains unit tests for the implementation. The intention is to show methodology, it is in no way representative of production ready code.   
 Uses 'NUnit' and 'Moq' frameworks 
 
-
 ## To run
 
 Build the project and run it as a console appplication - 'dotnet Balynn.Stories.dll' from the output folder, then navigate to: 
