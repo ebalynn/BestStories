@@ -46,17 +46,17 @@ namespace Balynn.BestStories.EndPoints
                 {
                     ctx.ThrowIfCancellationRequested();
 
-                    var story = await GetStoryAsync(ctx, storyId, client);
+                    var story = await GetStoryAsync(ctx, storyId, client)
+                        .ConfigureAwait(false);
 
                     result.Add(story);
                 }
-
             }
             finally
             {
                 sw.Stop();
 
-                _logger.LogInformation($"Time taken to retrieve all stories: {sw.Elapsed}");
+                _logger.LogInformation($"Time taken to retrieve '{result.Count}' stories: {sw.Elapsed}");
             }
 
             return result;

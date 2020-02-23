@@ -4,7 +4,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Balynn.BestStories.Models;
 using Balynn.BestStories.Services;
-using Microsoft.Extensions.Logging;
 
 namespace Balynn.BestStories.EndPoints
 {

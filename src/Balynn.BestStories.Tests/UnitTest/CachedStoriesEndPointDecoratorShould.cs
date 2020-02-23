@@ -26,7 +26,7 @@ namespace Balynn.BestStories.Tests.UnitTest
             _storiesCachingService = new Mock<IStoriesCachingService>();
             _loggerMock = new Mock<ILogger<CachedStoriesEndPointDecorator>>();
 
-            _cachedEndPoint = new CachedStoriesEndPointDecorator(_storiesEndPointMock.Object, _storiesCachingService.Object, _loggerMock.Object);
+            _cachedEndPoint = new CachedStoriesEndPointDecorator(_storiesEndPointMock.Object, _storiesCachingService.Object);
         }
 
         [Test]
