@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Balynn.BestStories", "Balynn.BestStories\Balynn.BestStories.csproj", "{2CF92B4E-F42A-4738-93FD-FF0CB56B7D85}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Balynn.BestStories.Tests", "Balynn.BestStories.Tests\Balynn.BestStories.Tests.csproj", "{39174D32-2992-4B0B-AB3F-C58F0882860C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CF92B4E-F42A-4738-93FD-FF0CB56B7D85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CF92B4E-F42A-4738-93FD-FF0CB56B7D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CF92B4E-F42A-4738-93FD-FF0CB56B7D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CF92B4E-F42A-4738-93FD-FF0CB56B7D85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39174D32-2992-4B0B-AB3F-C58F0882860C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39174D32-2992-4B0B-AB3F-C58F0882860C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39174D32-2992-4B0B-AB3F-C58F0882860C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39174D32-2992-4B0B-AB3F-C58F0882860C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE5966C8-CBD4-4676-B7C0-C0DE4E4F5B4B}
+	EndGlobalSection
+EndGlobal
