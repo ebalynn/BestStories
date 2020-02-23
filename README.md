@@ -1,6 +1,6 @@
 # Balynn.BestStories
 
-Implementation of a service which retrieves top 20 stories from Hacker News
+Implementation of a service which retrievesthe first best 20 stories from Hacker News API
 
 The solution consists of the two projects:
 Balynn.BestStories 
@@ -12,16 +12,14 @@ Provides a naive implementation of the specification.
 
 Uses the following:
 
-'Kestrel' - cross platform web server
-'Microsoft.AspNet.WebApi.Client' - used for consumption of the source Hacker News API 
-'IMemeryCache' - used for caching the results 
-'DataAnnotations' - field validation 'StoryModel'
+'Kestrel' cross platform web server, 'Microsoft.AspNet.WebApi.Client' used for consumption of the source Hacker News API, 'IMemeryCache' for caching the results, 'DataAnnotations' for field validation of 'StoryModel'
+
+To improve the performance of the API a simple implementation of memory caching with absolute expiration policy of 60 seconds is used.
+
 
 ## Balynn.BestStories.Tests
 
-Contains unit tests for the implementation. The intention is to show methodology, it is in no way representative of production ready code.   
-Uses 'NUnit' and 'Moq' frameworks 
-
+Contains unit tests for the implementation utilising NUnit and Moq. The intention is to show methodology rather than to provide the complete code coverage. 
 
 ## To run
 
