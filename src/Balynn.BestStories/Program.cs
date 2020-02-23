@@ -11,7 +11,6 @@ namespace Balynn.BestStories
         {
             WebHost.CreateDefaultBuilder(args)
                 .UseKestrel()
-                .UseContentRoot(Directory.GetCurrentDirectory())
                 .ConfigureLogging(logging =>
                 {
                     logging.ClearProviders();

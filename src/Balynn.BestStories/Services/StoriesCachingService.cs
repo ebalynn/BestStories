@@ -20,7 +20,9 @@ namespace Balynn.BestStories.Services
             _memoryCacheEntryOptions = new MemoryCacheEntryOptions().SetAbsoluteExpiration(cacheExpiration);
         }
 
-
+        /// <summary>
+        /// Gets the cached stories if not expired
+        /// </summary>
         public IReadOnlyCollection<StoryModel> Get()
         {
             if (_cache.TryGetValue(Key, out var result))
@@ -29,6 +31,9 @@ namespace Balynn.BestStories.Services
             return null;
         }
 
+        /// <summary>
+        /// Stores stories in memory cache
+        /// </summary>
         public void Store(IEnumerable<StoryModel> stories)
         {
             _cache.Set(Key, stories, _memoryCacheEntryOptions);
