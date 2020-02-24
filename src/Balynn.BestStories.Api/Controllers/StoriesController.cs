@@ -30,8 +30,6 @@ namespace Balynn.BestStories.Api.Controllers
         /// <summary>
         /// Gets the first 20 best stories from Hacker News API in descending order 
         /// </summary>
-        /// <param name="ctx"></param>
-        /// <returns></returns>
         [Route("best20")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<StoryModel>>> Best20(CancellationToken ctx)
