@@ -1,4 +1,4 @@
-﻿namespace Balynn.BestStories.EndPoints
+﻿namespace Balynn.BestStories.Api.EndPoints
 {
     public interface ICachedStoriesEndPointDecorator : IStoriesEndPoint
     {

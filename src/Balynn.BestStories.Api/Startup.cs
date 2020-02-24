@@ -1,13 +1,13 @@
-﻿using Balynn.BestStories.EndPoints;
-using Balynn.BestStories.Models;
-using Balynn.BestStories.Services;
+﻿using Balynn.BestStories.Api.EndPoints;
+using Balynn.BestStories.Api.Models;
+using Balynn.BestStories.Api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Balynn.BestStories
+namespace Balynn.BestStories.Api
 {
     public class Startup
     {

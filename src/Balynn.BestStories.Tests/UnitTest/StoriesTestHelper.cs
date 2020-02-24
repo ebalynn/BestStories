@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using Balynn.BestStories.Models;
+using Balynn.BestStories.Api.Models;
 
 namespace Balynn.BestStories.Tests.UnitTest
 {
-    internal class ShouldBase
+    internal static class StoriesTestHelper
     {
-        protected static IEnumerable<StoryModel> GenerateStories(int count)
+        public static IEnumerable<StoryModel> GenerateStories(int count)
         {
             for (var i = 0; i < count; i++)
             {

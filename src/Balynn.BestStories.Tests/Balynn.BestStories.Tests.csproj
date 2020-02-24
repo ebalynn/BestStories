@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Balynn.BestStories\Balynn.BestStories.csproj" />
+    <ProjectReference Include="..\Balynn.BestStories.Api\Balynn.BestStories.Api.csproj" />
   </ItemGroup>
 
   <ItemGroup>

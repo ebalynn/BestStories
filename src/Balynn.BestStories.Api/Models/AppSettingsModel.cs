@@ -1,4 +1,4 @@
-﻿namespace Balynn.BestStories.Models
+﻿namespace Balynn.BestStories.Api.Models
 {
     public class AppSettingsModel : ICacheSettings, IStoriesApiSettings
     {

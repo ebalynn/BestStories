@@ -6,7 +6,7 @@ The solution consists of the two projects:
 Balynn.BestStories 
 Balynn.BestStories.Tests
 
-## Balynn.BestStories
+## Balynn.BestStories.Api
 
 Provides a naive implementation of the specification.  
 

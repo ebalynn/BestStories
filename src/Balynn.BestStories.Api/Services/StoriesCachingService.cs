@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Balynn.BestStories.Models;
+using Balynn.BestStories.Api.Models;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace Balynn.BestStories.Services
+namespace Balynn.BestStories.Api.Services
 {
     public class StoriesCachingService : IStoriesCachingService, IDisposable
     {

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Balynn.BestStories.Models;
-using Balynn.BestStories.Services;
+using Balynn.BestStories.Api.Models;
+using Balynn.BestStories.Api.Services;
 
-namespace Balynn.BestStories.EndPoints
+namespace Balynn.BestStories.Api.EndPoints
 {
     /// <summary>
     /// 'Decorator' that adds caching logic 

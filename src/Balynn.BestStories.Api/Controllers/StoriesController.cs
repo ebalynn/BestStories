@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Balynn.BestStories.EndPoints;
-using Balynn.BestStories.Models;
+using Balynn.BestStories.Api.EndPoints;
+using Balynn.BestStories.Api.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Balynn.BestStories.Controllers
+namespace Balynn.BestStories.Api.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]

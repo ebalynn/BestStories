@@ -4,10 +4,10 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Balynn.BestStories.Models;
+using Balynn.BestStories.Api.Models;
 using Microsoft.Extensions.Logging;
 
-namespace Balynn.BestStories.EndPoints
+namespace Balynn.BestStories.Api.EndPoints
 {
     public class StoriesEndPoint : IStoriesEndPoint
     {

@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Balynn.BestStories.EndPoints;
-using Balynn.BestStories.Services;
+using Balynn.BestStories.Api.EndPoints;
+using Balynn.BestStories.Api.Services;
 using Moq;
 using NUnit.Framework;
 
@@ -10,7 +10,7 @@ namespace Balynn.BestStories.Tests.UnitTest
 {
 
     [TestFixture]
-    internal class CachedStoriesEndPointDecoratorShould : ShouldBase
+    internal class CachedStoriesEndPointDecoratorShould 
     {
         private Mock<IStoriesEndPoint> _storiesEndPointMock;
         private Mock<IStoriesCachingService> _storiesCachingService;
@@ -29,7 +29,7 @@ namespace Balynn.BestStories.Tests.UnitTest
         [Test]
         public async Task UseCachingService()
         {
-            var stories = GenerateStories(200).ToList();
+            var stories = StoriesTestHelper.GenerateStories(200).ToList();
 
             _storiesEndPointMock.Setup(e => e.GetBestStoriesAsync(It.IsAny<CancellationToken>()))
                 .ReturnsAsync(()=> stories);

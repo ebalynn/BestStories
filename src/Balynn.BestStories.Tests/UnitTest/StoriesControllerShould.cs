@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Balynn.BestStories.Controllers;
-using Balynn.BestStories.EndPoints;
-using Balynn.BestStories.Models;
+using Balynn.BestStories.Api.Controllers;
+using Balynn.BestStories.Api.EndPoints;
+using Balynn.BestStories.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -13,7 +13,7 @@ using NUnit.Framework;
 namespace Balynn.BestStories.Tests.UnitTest
 {
     [TestFixture]
-    internal class StoriesControllerShould : ShouldBase
+    internal class StoriesControllerShould 
     {
         private const int ResultCount = 20;
 
@@ -26,7 +26,7 @@ namespace Balynn.BestStories.Tests.UnitTest
         {
             _endPointMock = new Mock<ICachedStoriesEndPointDecorator>();
             _endPointMock.Setup(e => e.GetBestStoriesAsync(CancellationToken.None))
-                .ReturnsAsync(() => GenerateStories(200).ToList());
+                .ReturnsAsync(() => StoriesTestHelper.GenerateStories(200).ToList());
 
             _loggerMock = new Mock<ILogger<StoriesController>>();
             _storiesController = new StoriesController(_endPointMock.Object, _loggerMock.Object);

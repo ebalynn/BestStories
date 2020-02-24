@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Balynn.BestStories.Models;
+using Balynn.BestStories.Api.Models;
 
-namespace Balynn.BestStories.Services
+namespace Balynn.BestStories.Api.Services
 {
     public interface IStoriesCachingService
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Balynn.BestStories.Models
+namespace Balynn.BestStories.Api.Models
 {
     public class StoryModel
     {

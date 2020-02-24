@@ -1,9 +1,8 @@
-﻿using System.IO;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Balynn.BestStories
+namespace Balynn.BestStories.Api
 {
     public class Program
     {
