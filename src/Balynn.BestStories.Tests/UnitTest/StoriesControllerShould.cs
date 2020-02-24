@@ -16,6 +16,8 @@ namespace Balynn.BestStories.Tests.UnitTest
     [TestFixture]
     internal class StoriesControllerShould : ShouldBase
     {
+        private const int ResultCount = 20;
+
         private StoriesController _storiesController;
         private Mock<ICachedStoriesEndPointDecorator> _endPointMock;
         private Mock<ILogger<StoriesController>> _loggerMock;
@@ -35,17 +37,30 @@ namespace Balynn.BestStories.Tests.UnitTest
 
 
         [Test]
-        public async Task FetchTop20Stories()
+        public async Task Fetch20Stories()
         {
             var result = await _storiesController.Best20(CancellationToken.None);
            
             Assert.IsTrue(result.Result is OkObjectResult);
 
             var okResult = result.Result as OkObjectResult;
+            var stories = (IEnumerable<StoryModel>) okResult.Value;
 
-            Assert.IsTrue(((IEnumerable<StoryModel>) okResult.Value).Count() == 20);
-            
-            _endPointMock.Verify(endpoint => endpoint.GetBestStoriesAsync(CancellationToken.None), Times.Once);
+            Assert.IsTrue(stories.Count() == ResultCount);
+        }
+
+
+        [Test]
+        public async Task BeInDescendingOrderByScore()
+        {
+            var result = await _storiesController.Best20(CancellationToken.None);
+            var okResult = result.Result as OkObjectResult;
+            var stories = (IEnumerable<StoryModel>)okResult.Value;
+
+            for (var i = 0; i < ResultCount - 1; i++)
+            {
+                Assert.IsTrue(stories.ElementAt(i).Score > stories.ElementAt(i + 1).Score);
+            }
         }
     }
 }

@@ -46,6 +46,7 @@ namespace Balynn.BestStories.EndPoints
                 {
                     ctx.ThrowIfCancellationRequested();
 
+                    // We don't care about synchronization context in this case, 'hence ConfigureAwait(false)'
                     var story = await GetStoryAsync(ctx, storyId, client)
                         .ConfigureAwait(false);
 

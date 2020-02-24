@@ -23,7 +23,11 @@ namespace Balynn.BestStories.EndPoints
         }
         
         /// <summary>
-        /// 'Extends' the existing method in 'StoriesEndPoint' with caching functionality
+        /// 'Decorates' the method with caching functionality to improve performance. The implementation is quite naive
+        /// in a sense it only caches the data for an absolute time.
+        /// Locking within async/await is a bit tricky (for obvious reasons). Ideally I would have wanted to use
+        /// ReaderWriterLockerSlim by entering into a reading lock first and then upgrading to a write lock if the
+        /// data is not cached.  
         /// </summary>
         public async Task<IReadOnlyCollection<StoryModel>> GetBestStoriesAsync(CancellationToken ctx)
         {
