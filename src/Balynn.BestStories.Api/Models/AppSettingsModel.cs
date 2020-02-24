@@ -1,6 +1,6 @@
 ﻿namespace Balynn.BestStories.Api.Models
 {
-    public class AppSettingsModel : ICacheSettings, IStoriesApiSettings, IResponseCacheSettings
+    public class AppSettingsModel : ICacheSettings, IStoriesApiSettings
     {
         public string StoriesApiUrl { get; set; }
         
