@@ -12,6 +12,7 @@ namespace Balynn.BestStories.Api
     public class Startup
     {
         private const string ApplicationSettingsSection = "ApplicationSettings";
+        public const string ResponseCacheProfileName = "Default";
 
         public Startup(IConfiguration configuration)
         {
@@ -22,11 +23,17 @@ namespace Balynn.BestStories.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            var applicationSettings = Configuration.GetSection(ApplicationSettingsSection).Get<AppSettingsModel>();
+
+            services.AddMvc(options =>
+            {
+                options.CacheProfiles.Add(ResponseCacheProfileName, new CacheProfile
+                {
+                    Duration = applicationSettings.ResponseCacheDurationSeconds
+                });
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddLogging();
             services.AddMemoryCache();
-
-            var applicationSettings = Configuration.GetSection(ApplicationSettingsSection).Get<AppSettingsModel>();
 
             services.AddSingleton<ICacheSettings>(applicationSettings);
             services.AddSingleton<IStoriesApiSettings>(applicationSettings);

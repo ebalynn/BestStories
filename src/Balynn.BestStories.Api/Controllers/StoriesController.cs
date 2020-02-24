@@ -13,6 +13,7 @@ namespace Balynn.BestStories.Api.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
+    [ResponseCache(CacheProfileName = Startup.ResponseCacheProfileName)]
     public class StoriesController : ControllerBase
     {
         private const int NumberOfStories = 20;
