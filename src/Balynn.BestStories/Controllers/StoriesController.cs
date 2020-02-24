@@ -5,7 +5,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Balynn.BestStories.EndPoints;
 using Balynn.BestStories.Models;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -18,14 +17,12 @@ namespace Balynn.BestStories.Controllers
     {
         private const int NumberOfStories = 20;
         private readonly ICachedStoriesEndPointDecorator _storiesRepository;
-        private readonly IHostingEnvironment _environment;
         private readonly ILogger<StoriesController> _logger;
 
 
-        public StoriesController(ICachedStoriesEndPointDecorator storiesRepository, IHostingEnvironment environment, ILogger<StoriesController> logger)
+        public StoriesController(ICachedStoriesEndPointDecorator storiesRepository, ILogger<StoriesController> logger)
         {
             _storiesRepository = storiesRepository;
-            _environment = environment;
             _logger = logger;
         }
 

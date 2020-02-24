@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Balynn.BestStories.Controllers;
 using Balynn.BestStories.EndPoints;
 using Balynn.BestStories.Models;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -21,18 +20,16 @@ namespace Balynn.BestStories.Tests.UnitTest
         private StoriesController _storiesController;
         private Mock<ICachedStoriesEndPointDecorator> _endPointMock;
         private Mock<ILogger<StoriesController>> _loggerMock;
-        private Mock<IHostingEnvironment> _hostingEnvironment;
 
         [SetUp]
         public void SetUp()
         {
             _endPointMock = new Mock<ICachedStoriesEndPointDecorator>();
-            _hostingEnvironment = new Mock<IHostingEnvironment>();
             _endPointMock.Setup(e => e.GetBestStoriesAsync(CancellationToken.None))
                 .ReturnsAsync(() => GenerateStories(200).ToList());
 
             _loggerMock = new Mock<ILogger<StoriesController>>();
-            _storiesController = new StoriesController(_endPointMock.Object, _hostingEnvironment.Object, _loggerMock.Object);
+            _storiesController = new StoriesController(_endPointMock.Object, _loggerMock.Object);
         }
 
 
@@ -51,7 +48,7 @@ namespace Balynn.BestStories.Tests.UnitTest
 
 
         [Test]
-        public async Task BeInDescendingOrderByScore()
+        public async Task ReturnStoriesInDescOrderByScore()
         {
             var result = await _storiesController.Best20(CancellationToken.None);
             var okResult = result.Result as OkObjectResult;
