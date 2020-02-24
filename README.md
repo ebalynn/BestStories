@@ -23,7 +23,7 @@ Contains unit tests for the implementation utilising NUnit and Moq. The intentio
 
 ## To run
 
-Build the project and run it as a console appplication - 'dotnet Balynn.Stories.dll' from the output folder, then navigate to: 
+Build the project and run it as a console appplication - 'dotnet Balynn.Stories.Api.dll' from the output folder, then navigate to: 
  
 http://localhost:5000/api/v1/stories/best20
 
